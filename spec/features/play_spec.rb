@@ -25,4 +25,18 @@ feature 'playing a game' do
     click_button 'Rock'
     expect(page).to have_content 'You chose Rock'
   end
+
+  # As a marketeer
+  # So I can play the game
+  # I want the game to chose a random option
+  scenario 'game choses a random option' do
+    message = find(:css, '#opponent').text.strip
+
+    click_button 'Rock'
+    expect(possible_messages).to include message
+  end
+
+  def possible_messages
+    [:rock, :paper, :scissors].map { |shape| "Opponent chose #{shape.to_s.capitalize}!" }
+  end
 end
