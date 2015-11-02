@@ -27,12 +27,11 @@ feature 'playing a game' do
   end
 
   # As a marketeer
-  # So I can play the game
-  # I want the game to chose a random option
-  scenario 'game choses a random option' do
-    message = find(:css, '#opponent').text.strip
-
+  # So I can play the game with an opponent
+  # I want my opponent to choose a shape
+  scenario 'opponent chooses a shape' do
     click_button 'Rock'
+    message = find(:css, '#opponent').text.strip
     expect(possible_messages).to include message
   end
 
