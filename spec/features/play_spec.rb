@@ -13,9 +13,9 @@ feature 'playing a game' do
   # So that I can play the game
   # I want to see the shapes I can play
   scenario 'see the shape options' do
-    expect(page).to have_content 'Rock'
-    expect(page).to have_content 'Paper'
-    expect(page).to have_content 'Scissors'
+    expect(page).to have_button 'Rock'
+    expect(page).to have_button 'Paper'
+    expect(page).to have_button 'Scissors'
   end
 
   # As a marketeer
