@@ -17,4 +17,12 @@ feature 'playing a game' do
     expect(page).to have_content 'Paper'
     expect(page).to have_content 'Scissors'
   end
+
+  # As a marketeer
+  # So that I can play the game
+  # I want to choose a shape to play
+  scenario 'choose a shape' do
+    click_button 'Rock'
+    expect(page).to have_content 'You chose Rock'
+  end
 end
