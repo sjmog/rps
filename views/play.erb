@@ -6,20 +6,11 @@ Hello, <%= @turn.player_name %>!
   <input type="submit" name="shape" value="Scissors">
 </form>
 
-You chose <%= @turn.player_shape %>!
+You chose <%= @turn.player_shape.to_s.capitalize %>!
 
 <div id="opponent">
   Opponent chose <%= @turn.opponent_shape.to_s.capitalize %>!
 </div>
 
-
-<% if @turn.opponent_shape %>
-  <% if @turn.draw? %>
-    You draw!
-  <% elsif @turn.win? %>
-    You win!
-  <% else %>
-    You lose!
-  <% end %>
-<% end %>
+<%= @endgame_message %>
 
