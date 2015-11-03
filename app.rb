@@ -16,7 +16,6 @@ class Rps < Sinatra::Base
 
   get '/play' do
     @turn = Turn.new(session)
-    @endgame_message = endgame_message
     erb :play
   end
 
@@ -28,18 +27,4 @@ class Rps < Sinatra::Base
 
   # start the server if ruby file executed directly
   run! if app_file == $0
-
-  private
-
-  def endgame_message
-    if @turn.opponent_shape
-      if @turn.draw?
-        "You draw!"
-      elsif @turn.win?
-        "You win!"
-      else
-        "You lose!"
-      end
-    end
-  end
 end

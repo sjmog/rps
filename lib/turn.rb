@@ -28,6 +28,7 @@ class Turn
   private
 
   def result
+    return if @opponent_shape.nil?
     GAME_RULES[@player_shape][@opponent_shape]
   end
 end

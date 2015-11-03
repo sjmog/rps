@@ -12,5 +12,11 @@ You chose <%= @turn.player_shape.to_s.capitalize %>!
   Opponent chose <%= @turn.opponent_shape.to_s.capitalize %>!
 </div>
 
-<%= @endgame_message %>
+<% if @turn.draw? %>
+  You draw!
+<% elsif @turn.win? %>
+  You win!
+<% elsif @turn.lose? %>
+  You lose!
+<% end %>
 
